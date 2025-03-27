@@ -39,4 +39,14 @@ public class CommentTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void authorStored()
+    {
+        Comment comment2 = new Comment("Lebron", "the goat and king", 5);
+        assertEquals("Legoat", comment2.getAuthor());
+        assertEquals("Legoat", comment2.getAuthor());
+        assertEquals(5, comment2.getRating());
+    }
 }
+

@@ -87,7 +87,19 @@ public class SalesItemTest
         SalesItem salesIte1 = new SalesItem("Brain Surgery for Dummies.", 9899);
         assertEquals(true, salesIte1.addComment("Fred", "Great - I perform brain surgery every week now!", 4));
     }
+
+    @Test
+    public void negativeTest()
+    {
+        SalesItem salesIte1 = new SalesItem("Jordan 1", 1000);
+        assertEquals(false, salesIte1.addComment("Micheal", "Jordan", 0));
+        assertEquals(false, salesIte1.addComment("Socks", "sucks", -2));
+        assertEquals(false, salesIte1.addComment("Bag", "Best", -5));
+        SalesItem salesIte2 = new SalesItem("nissan r34", 1000000);
+        assertEquals(false, salesIte2.addComment("Japan", "BEST CAR", 6));
+    }
 }
+
 
 
 
