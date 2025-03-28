@@ -44,9 +44,38 @@ public class CommentTest
     public void authorStored()
     {
         Comment comment2 = new Comment("Lebron", "the goat and king", 5);
-        assertEquals("Legoat", comment2.getAuthor());
-        assertEquals("Legoat", comment2.getAuthor());
+        //assertEquals("Legoat", comment2.getAuthor());
+        assertEquals("Lebron", comment2.getAuthor());
         assertEquals(5, comment2.getRating());
     }
+    
+    
+    
+    ///18
+    
+
+    @Test
+    public void upVoteTest()
+    {
+        Comment comment2 = new Comment("Lebron", "the goat and king", 5);
+        comment2.upvote();
+        comment2.upvote();
+        comment2.upvote();
+        comment2.upvote();
+        comment2.upvote();
+        assertEquals(5, comment2.getVoteCount());
+        //assertEquals(1, comment2.getVoteCount());
+        comment2.downvote();
+        comment2.downvote();
+        comment2.downvote();
+        comment2.downvote();
+        comment2.downvote();
+        comment2.downvote();
+        comment2.downvote();
+        comment2.downvote();
+        //assertEquals(5, comment2.getVoteCount());
+        assertEquals(-3, comment2.getVoteCount());
+    }
 }
+
 

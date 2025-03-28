@@ -26,6 +26,7 @@ public class SalesItem
         this.name = name;
         this.price = price;
         comments = new ArrayList<>();
+        
     }
 
     /**
@@ -115,9 +116,12 @@ public class SalesItem
         System.out.println("Price: " + priceString(price));
         System.out.println();
         System.out.println("Customer comments:");
-        for(Comment comment : comments) {
+        int index = 0;
+        while(index < comments.size()) {
+            Comment comment = comments.get(index);
             System.out.println("-------------------------------------------");
-            System.out.println(comment.getFullDetails());
+            System.out.println(comment);
+            index++;
         }
         System.out.println();
         System.out.println("===========================================");
@@ -159,10 +163,13 @@ public class SalesItem
      */
     private Comment findCommentByAuthor(String author)
     {
-        for(Comment comment : comments) {
+        int i = 0;
+        while(i < comments.size()) {
+            Comment comment = comments.get(i);
             if(comment.getAuthor().equals(author)) {
                 return comment;
             }
+            i++;
         }
         return null;
     }
